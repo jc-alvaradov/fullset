@@ -29,7 +29,7 @@ export default function RootLayout({
               <Link href="/publish">Publicar</Link>
             </section>
           </nav>
-        {children}
+          {children}
         </Providers>
       </body>
     </html>

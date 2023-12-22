@@ -1,3 +1,5 @@
-export default function Page() {
-  return <h1>Hello, Product Page!</h1>
+import Product from "@/components/product";
+
+export default function Page({ props }) {
+	return <Product data={product} />;
 }
