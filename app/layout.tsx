@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Link from 'next/link'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,7 +17,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <nav className="flex justify-between gap-2 w-full">
+          <Link href="/">Home</Link>
+          <section>
+            <Link href="/category">Categorías</Link>
+            <Link href="/publish">Publicar</Link>
+          </section>
+        </nav>
+        {children}
+      </body>
     </html>
   )
 }
