@@ -1,7 +1,15 @@
-import Product from "@/components/product";
+import Product, { TProduct } from "@/components/product";
 
-export default function ProductList({ products }) {
-	return products.map((product) => (
-		<Product product={product} key={product.key} />
-	));
+type TProps = {
+	products: TProduct[];
+};
+
+export default function ProductList({ products }: TProps) {
+	return (
+		<div className="grid gap-4 grid-cols-2">
+			{products.map((product) => (
+				<Product {...product} key={product.id} />
+			))}
+		</div>
+	);
 }

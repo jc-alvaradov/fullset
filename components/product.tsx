@@ -1,16 +1,13 @@
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Button } from "@nextui-org/react";
 
-type TProduct = {
+export type TProduct = {
+	id: string;
 	seller: string;
 	title: string;
 	description: string;
 };
 
-type TProps = {
-	product: TProduct;
-};
-
-export default function Product({ product }: TProps) {
+export default function Product(product: TProduct) {
 	return (
 		<Card className="py-4">
 			<CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
@@ -19,6 +16,7 @@ export default function Product({ product }: TProps) {
 			</CardHeader>
 			<CardBody className="overflow-visible py-2">
 				<p>{product.description}</p>
+				<Button>Click me</Button>
 			</CardBody>
 		</Card>
 	);

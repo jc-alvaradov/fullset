@@ -1,13 +1,20 @@
-import { Button } from "@nextui-org/button";
 import ProductList from "@/components/productList";
 
 const categories = [
 	{
+		id: "category-1",
 		products: [
 			{
+				id: "product-id1",
 				seller: "vendedor",
 				title: "Producto",
 				description: "body",
+			},
+			{
+				id: "product-id2",
+				seller: "otro-vendedor",
+				title: "Producto n 2",
+				description: "body body",
 			},
 		],
 	},
@@ -15,11 +22,9 @@ const categories = [
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center justify-between p-24">
-			<h1>Hello, Home Page!</h1>
-			<Button>Click me</Button>
+		<main className="">
 			{categories.map((category) => (
-				<ProductList products={category.products} />
+				<ProductList products={category.products} key={category.id} />
 			))}
 		</main>
 	);
