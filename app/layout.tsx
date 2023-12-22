@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
+
+import { Providers } from './providers';
+
 import '@/styles/globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,16 +19,18 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className='dark'>
       <body className={inter.className}>
-        <nav className="flex justify-between gap-2 w-full">
-          <Link href="/">Home</Link>
-          <section>
-            <Link href="/category">Categorías</Link>
-            <Link href="/publish">Publicar</Link>
-          </section>
-        </nav>
+        <Providers>
+          <nav className="flex justify-between gap-2 w-full">
+            <Link href="/">Home</Link>
+            <section>
+              <Link href="/category">Categorías</Link>
+              <Link href="/publish">Publicar</Link>
+            </section>
+          </nav>
         {children}
+        </Providers>
       </body>
     </html>
   )
