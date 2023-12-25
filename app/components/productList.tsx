@@ -1,4 +1,4 @@
-import Product, { TProduct } from "@/components/product";
+import Product, { TProduct } from "./product";
 
 type TProps = {
   products: TProduct[];

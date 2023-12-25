@@ -22,7 +22,7 @@ const categories = [
 
 export default function Home() {
   return (
-    <main className="">
+    <main>
       {categories.map((category) => (
         <ProductList products={category.products} key={category.id} />
       ))}
