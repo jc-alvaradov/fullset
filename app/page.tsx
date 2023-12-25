@@ -22,7 +22,7 @@ const categories = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="dark text-foreground bg-background">
       {categories.map((category) => (
         <ProductList products={category.products} key={category.id} />
       ))}
